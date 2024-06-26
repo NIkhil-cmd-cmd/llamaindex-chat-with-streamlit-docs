@@ -8,8 +8,8 @@ except ImportError:
 
 st.set_page_config(page_title="Share-On", page_icon="💬", layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
-st.title("Chat with the Mental Health Assistant, powered by LlamaIndex")
-st.info("This chatbot is here to help answer your mental health questions and provide support. Please note that it is not a substitute for professional advice or therapy.", icon="📃")
+st.title("Share what's on your mind with Share-On")
+st.info("Share-On is here provide you mental health support. Please note that it is not a substitute for professional advice or therapy.", icon="📃")
 
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [
