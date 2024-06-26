@@ -13,7 +13,7 @@ st.info("Share-On is here provide you mental health support. Please note that it
 
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [
-        {"role": "assistant", "content": "Hi! I'm here to help with your mental health questions. How can I assist you today?"}
+        {"role": "assistant", "content": "Hi! I'm here to provide you with mental health support. How can I assist you today?"}
     ]
 
 @st.cache_resource(show_spinner=False)
