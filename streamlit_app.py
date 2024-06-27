@@ -27,10 +27,10 @@ with st.sidebar:
 # Define pages
 def home():
     st.title("Welcome to Share-On")
-    st.info("Share-On is here to provide you mental health support. Please note that it is not a substitute for professional advice or therapy.", icon="📃")
+    st.info("From AI to advocacy, Share-On is a non-profit 501-3(C) organization dedicated to supporting teenage mental health with innovative software created by teens, for teens. The deterioration of students’ mental health is a highly overlooked, yet universal, issue caused by factors such as schoolwork, social life, and extracurricular activities. Share-On offers a platform for students to unwind and seek guidance. With our self-developed AI algorithm, users can input their current problems as “rants” into our platform, and receive an output with specialized resources and customized advice catered to their issues. Furthermore, our data collection helps us to identify common challenges among teens, enabling Share-On to work with the community to help find solutions. ", icon="📃")
 
 def chat():
-    st.title("Chat with Share-On")
+    st.title("Share what's on your mind with Share-On")
     if "messages" not in st.session_state.keys():  # Initialize the chat messages history
         st.session_state.messages = [
             {"role": "assistant", "content": "Hi! I'm here to provide you with mental health support. How can I assist you today?"}
