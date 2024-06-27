@@ -93,3 +93,22 @@ def advocacy():
     st.title("Advocacy")
     st.info("At Share-On, we are dedicated to harnessing the power of user data to drive positive change. Through a careful and respectful approach, we utilize the insights gained from the stories shared within our organization to advocate for stronger mental health laws and bills. Our commitment to your privacy will always stand; every piece of information shared is treated with the utmost confidentiality. Your stories aren't just stories here; they're fuel for change. Our aim is to shape policies that truly help people dealing with mental health struggles.")
     # Add your resource content here
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Multipage App",
+    page_icon="👋",
+)
+
+st.title("Main Page")
+st.sidebar.success("Select a page above.")
+
+if "my_input" not in st.session_state:
+    st.session_state["my_input"] = ""
+
+my_input = st.text_input("Input a text here", st.session_state["my_input"])
+submit = st.button("Submit")
+if submit:
+    st.session_state["my_input"] = my_input
+    st.write("You have entered: ", my_input)
