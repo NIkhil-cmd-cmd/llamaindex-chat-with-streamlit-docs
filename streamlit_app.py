@@ -111,5 +111,6 @@ elif selected == "Chat":
     chat()
 elif selected == "Resources":
     resources()
-elif selected == "Advocacy"?    
+elif selected == "Advocacy":
+    advocacy()
      
