@@ -92,3 +92,24 @@ elif selected == "Resources":
 def advocacy():
     st.title("Advocacy")
     st.info("At Share-On, we are dedicated to harnessing the power of user data to drive positive change. Through a careful and respectful approach, we utilize the insights gained from the stories shared within our organization to advocate for stronger mental health laws and bills. Our commitment to your privacy will always stand; every piece of information shared is treated with the utmost confidentiality. Your stories aren't just stories here; they're fuel for change. Our aim is to shape policies that truly help people dealing with mental health struggles.")
+    # Add your resource content here
+
+# Hide Streamlit style
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
+# Render selected page
+if selected == "Home":
+    home()
+elif selected == "Chat":
+    chat()
+elif selected == "Resources":
+    resources()
+elif selected == "Advocacy"?    
+     
