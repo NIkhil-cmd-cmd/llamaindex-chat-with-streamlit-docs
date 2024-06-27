@@ -69,7 +69,98 @@ def chat():
 def Mental_Health_Resources():
     st.title("Mental Health Resources")
     st.info("Here you can find various resources related to mental health.")
-    # Add your resource content here
+    # Add your resource content here ("Call 911 if you or someone you know is in immediate danger or go to the nearest emergency room.
+
+
+
+988 Suicide & Crisis Lifeline 
+
+Call or text 988; Llame al 988 (para ayuda en español)
+Use Lifeline Chat  on the web (English only)
+The Lifeline provides 24-hour, confidential support to anyone in suicidal crisis or emotional distress. Call or text 988 to connect with a trained crisis counselor. 
+
+
+
+Veterans Crisis Line 
+Use Veterans Crisis Chat  on the web 
+The Veterans Crisis Line is a free, confidential resource that connects veterans 24 hours a day, 7 days a week with a trained responder. The service is available to all veterans and those who support them, even if they are not registered with the VA or enrolled in VA healthcare.
+
+
+
+Disaster Distress Helpline 
+Call or text 1-800-985-5990
+The disaster distress helpline provides immediate crisis counseling for people who are experiencing emotional distress related to any natural or human-caused disaster. The helpline is free, multilingual, confidential, and available 24 hours a day, 7 days a week.
+
+View the 5 action steps for helping someone in emotional pain infographic to see how you can help those in distress.")
+
+Source: https://www.nimh.nih.gov/health/find-help 
+
+
+
+Nation sexual assault hotline
+
+Call: 1-800-656-4673
+
+For more visit: https://sakitta.org/survivors/
+
+
+
+National Domestic Violence Hotline
+
+Call: 800-799-7233 or text "START" to: 88788
+
+​
+
+Love is Respect – National Teen Dating Abuse Hotline
+
+Hotline: 1 (866) 331 – 9474
+Text: 22522
+Available 24 hours a day, 7 days a week via phone, text, and online chat.
+
+Love is Respect offers information, support, and advocacy to young people who have questions or concerns about their dating relationships.
+
+​
+
+StrongHearts Native Helpline
+
+Hotline: 1 (844) 762 – 8483
+Available Monday through Friday, 9:00am to 5:30pm CST via phone.
+
+The StrongHearts Native Helpline is a safe, anonymous, and confidential service for Native Americans experiencing domestic violence and dating violence.
+
+​
+
+Pathways to Safety International
+
+Hotline: 1 (833) 723 – 3833
+Email: crisis@pathwaystosafety.org
+Available 24 hours a day, 7 days a week via phone, email, and online chat.
+
+Pathways to Safety International assists Americans experiencing interpersonal and gender based violence abroad.
+
+
+
+Gay, Lesbian, Bisexual and Transgender National Hotline
+
+Hotline: 1 (888) 843 – 4564
+Youth Talkline: 1 (800) 246 – 7743
+Senior Helpline: 1 (888) 234 – 7243
+Email: help@LGBThotline.org
+Hours vary, available via phone and online chat.
+
+The LGBT National Help Center serves gay, lesbian, bisexual, transgender, and questioning people by providing free and confidential peer support and local resources.
+
+
+
+Womens Law
+
+Email hotline: https://hotline.womenslaw.org/
+
+The WomensLaw online helpline provides basic legal information, referrals, and emotional support for victims of abuse.
+
+​
+
+For more visit: https://victimconnect.org/resources/national-hotlines/​
 
 # Hide Streamlit style
 hide_st_style = """
