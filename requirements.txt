@@ -1,4 +1,5 @@
 streamlit
+streamlit_option_menu
 openai
 llama-index
 llama-index-llms-openai
