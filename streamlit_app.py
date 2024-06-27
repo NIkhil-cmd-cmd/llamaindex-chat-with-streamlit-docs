@@ -88,6 +88,8 @@ elif selected == "Chat":
     chat()
 elif selected == "Resources":
     resources()
+elif selected == "Advocacy":
+    advocacy()
 
 def advocacy():
     st.title("Advocacy")
