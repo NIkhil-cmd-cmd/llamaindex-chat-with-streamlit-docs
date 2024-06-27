@@ -18,8 +18,8 @@ st.set_page_config(page_title="Share-On", page_icon="💬", layout="centered", i
 with st.sidebar:
     selected = option_menu(
         "Menu",
-        ["Home", "Chat", "Resources", "advocacy"],
-        icons=["house", "chat", "book", "muscle"],
+        ["Home", "Chat", "Resources", "Advocacy"],
+        icons=["house", "chat", "book", "smiley"],
         menu_icon="cast",
         default_index=0,
     )
