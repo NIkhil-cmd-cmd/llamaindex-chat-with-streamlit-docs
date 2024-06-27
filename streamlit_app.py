@@ -18,8 +18,8 @@ st.set_page_config(page_title="Share-On", page_icon="💬", layout="centered", i
 with st.sidebar:
     selected = option_menu(
         "Menu",
-        ["Home", "Chat", "Resources"],
-        icons=["house", "chat", "book"],
+        ["Home", "Chat", "Resources", "advocacy"],
+        icons=["house", "chat", "book", "muscle"],
         menu_icon="cast",
         default_index=0,
     )
@@ -88,3 +88,7 @@ elif selected == "Chat":
     chat()
 elif selected == "Resources":
     resources()
+
+def advocacy():
+    st.title("Advocacy")
+    st.info("At Share-On, we are dedicated to harnessing the power of user data to drive positive change. Through a careful and respectful approach, we utilize the insights gained from the stories shared within our organization to advocate for stronger mental health laws and bills. Our commitment to your privacy will always stand; every piece of information shared is treated with the utmost confidentiality. Your stories aren't just stories here; they're fuel for change. Our aim is to shape policies that truly help people dealing with mental health struggles.")
