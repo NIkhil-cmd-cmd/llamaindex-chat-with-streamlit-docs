@@ -19,7 +19,7 @@ with st.sidebar:
     selected = option_menu(
         "Menu",
         ["Home", "Chat", "Resources", "Advocacy"],
-        icons=["house", "chat", "book", "book"],
+        icons=["house", "chat", "book", "⚡️"],
         menu_icon="cast",
         default_index=0,
     )
