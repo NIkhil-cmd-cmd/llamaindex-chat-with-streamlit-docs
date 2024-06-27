@@ -6,7 +6,7 @@ try:
 except ImportError:
     from llama_index.core import VectorStoreIndex, ServiceContext, Document, SimpleDirectoryReader
 
-st.set_page_config(page_title="Share-On", page_icon="🤭", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Share-On", page_icon='path/to/your_icon.png', layout='wide'), layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
 st.title("Share what's on your mind with Share-On")
 st.info("Share-On is here provide you mental health support. Please note that it is not a substitute for professional advice or therapy.", icon="📃")
@@ -21,7 +21,7 @@ def load_data():
     with st.spinner(text="Loading and indexing mental health resources – hang tight! This should take 1-2 minutes."):
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are a mental health assistant. Your job is to answer questions related to mental health, provide support, and offer factual information. Keep your answers supportive and based on facts – do not hallucinate features or give medical advice."))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are a mental health assistant. Your job is to answer questions related to mental health, provide support, and offer factual information. Keep your answers supportive and based on facts – do not hallucinate features or give medical advice. You must provide responses to users queries that are catered to the teenage demographic."))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 
