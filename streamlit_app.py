@@ -18,7 +18,7 @@ st.set_page_config(page_title="Share-On", page_icon="💬", layout="centered", i
 with st.sidebar:
     selected = option_menu(
         "Menu",
-        ["Home", "Chat", "Resources", "Advocacy"],
+        ["Home", "Chat", "Mental Health Resources", "Advocacy"],
         icons=["house", "chat", "book", "book"],
         menu_icon="cast",
         default_index=0,
@@ -66,7 +66,7 @@ def chat():
                 message = {"role": "assistant", "content": response.response}
                 st.session_state.messages.append(message)  # Add response to message history
 
-def resources():
+def Mental_Health_Resources():
     st.title("Mental Health Resources")
     st.info("Here you can find various resources related to mental health.")
     # Add your resource content here
