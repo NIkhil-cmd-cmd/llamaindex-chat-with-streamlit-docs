@@ -11,8 +11,14 @@ except ImportError:
 # Initialize OpenAI API key
 openai.api_key = st.secrets.openai_key
 
-# Set page configuration
-st.set_page_config(page_title="Share-On", page_icon="share-on logo .jpeg", layout="centered", initial_sidebar_state="auto", menu_items=None)
+# Set page configuration with custom image logo
+st.set_page_config(
+    page_title="Share-On",
+    page_icon="https://raw.githubusercontent.com/your-username/your-repo/main/path-to-your-image/logo.png",  # replace with your image URL
+    layout="centered",
+    initial_sidebar_state="auto",
+    menu_items=None
+)
 
 # Sidebar menu
 with st.sidebar:
@@ -27,7 +33,20 @@ with st.sidebar:
 # Define pages
 def home():
     st.title("Welcome to Share-On")
-    st.info("From AI to advocacy, Share-On is a non-profit 501-3(C) organization dedicated to supporting teenage mental health with innovative software created by teens, for teens. The deterioration of students’ mental health is a highly overlooked, yet universal, issue caused by factors such as schoolwork, social life, and extracurricular activities. Share-On offers a platform for students to unwind and seek guidance. With our self-developed AI algorithm, users can input their current problems as “rants” into our platform, and receive an output with specialized resources and customized advice catered to their issues. Furthermore, our data collection helps us to identify common challenges among teens, enabling Share-On to work with the community to help find solutions. ", icon="📃")
+    st.info(
+        "From AI to advocacy, Share-On is a non-profit 501-3(C) organization dedicated to supporting teenage mental health with innovative software created by teens, for teens. The deterioration of students’ mental health is a highly overlooked, yet universal, issue caused by factors such as schoolwork, social life, and extracurricular activities. Share-On offers a platform for students to unwind and seek guidance. With our self-developed AI algorithm, users can input their current problems as 'rants' into our platform, and receive an output with specialized resources and customized advice catered to their issues. Furthermore, our data collection helps us to identify common challenges among teens, enabling Share-On to work with the community to help find solutions.",
+        icon="📃"
+    )
+
+def load_data():
+    with st.spinner(text="Loading and indexing mental health resources – hang tight! This should take 1-2 minutes."):
+        reader = SimpleDirectoryReader('share-on/data')
+        docs = reader.load_data()
+        service_context = ServiceContext.from_defaults(
+            llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are a mental health assistant. Your job is to answer questions related to mental health, provide support, and offer factual information. Keep your answers supportive and based on facts – do not hallucinate features or give medical advice.")
+        )
+        index = VectorStoreIndex.from_documents(docs, service_context=service_context)
+        return index
 
 def chat():
     st.title("Share what's on your mind with Share-On")
@@ -35,18 +54,6 @@ def chat():
         st.session_state.messages = [
             {"role": "assistant", "content": "Hi! I'm here to provide you with mental health support. How can I assist you today?"}
         ]
-    @st.cache_resource(show_spinner=False)
-def load_data():
-    with st.spinner(text="Loading and indexing mental health resources – hang tight! This should take 1-2 minutes."):
-         reader = SimpleDirectoryReader('share-on/data')
-    docs = reader.load_data()
-    service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are a mental health assistant. Your job is to answer questions related to mental health, provide support, and offer factual information. Keep your answers supportive and based on facts – do not hallucinate features or give medical advice."))
-def chat():
-    index = load_data()
-    # Rest of your chat function
-
-if __name__ == "__main__":
-    chat()
 
     index = load_data()
 
@@ -72,30 +79,31 @@ if __name__ == "__main__":
 def Mental_Health_Resources():
     st.title("Mental Health Resources")
     st.info("Here you can find various resources related to mental health.")
-    # Add your resource content here ​
-
-# Hide Streamlit style
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+    # Add your resource content here
 
 def advocacy():
     st.title("Advocacy")
-    st.info("At Share-On, we are dedicated to harnessing the power of user data to drive positive change. Through a careful and respectful approach, we utilize the insights gained from the stories shared within our organization to advocate for stronger mental health laws and bills. Our commitment to your privacy will always stand; every piece of information shared is treated with the utmost confidentiality. Your stories aren't just stories here; they're fuel for change. Our aim is to shape policies that truly help people dealing with mental health struggles.")
+    st.info(
+        "At Share-On, we are dedicated to harnessing the power of user data to drive positive change. Through a careful and respectful approach, we utilize the insights gained from the stories shared within our organization to advocate for stronger mental health laws and bills. Our commitment to your privacy will always stand; every piece of information shared is treated with the utmost confidentiality. Your stories aren't just stories here; they're fuel for change. Our aim is to shape policies that truly help people dealing with mental health struggles."
+    )
     # Add your resource content here
+
+# Hide Streamlit style
+hide_st_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+    """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # Render selected page
 if selected == "Home":
     home()
 elif selected == "Chat":
     chat()
-elif selected == "Resources":
-    resources()
+elif selected == "Mental Health Resources":
+    Mental_Health_Resources()
 elif selected == "Advocacy":
     advocacy()
-
