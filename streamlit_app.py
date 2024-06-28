@@ -35,7 +35,6 @@ def chat():
         st.session_state.messages = [
             {"role": "assistant", "content": "Hi! I'm here to provide you with mental health support. How can I assist you today?"}
         ]
-
     @st.cache_resource(show_spinner=False)
 def load_data():
     with st.spinner(text="Loading and indexing mental health resources – hang tight! This should take 1-2 minutes."):
