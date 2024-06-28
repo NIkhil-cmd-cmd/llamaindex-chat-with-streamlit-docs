@@ -12,7 +12,7 @@ except ImportError:
 openai.api_key = st.secrets.openai_key
 
 # Set page configuration
-st.set_page_config(page_title="Share-On", page_icon="https://raw.githubusercontent.com/NIkhil-cmd-cmd/share-on/main/logo.jpg", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Share-On", page_icon="share-on logo .jpeg", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 # Sidebar menu
 with st.sidebar:
