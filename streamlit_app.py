@@ -42,7 +42,6 @@ def chat():
           reader = SimpleDirectoryReader('/path/to/your/data')
         docs = reader.load_data()
             service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are a mental health assistant. Your job is to answer questions related to mental health, provide support, and offer factual information. Keep your answers supportive and based on facts – do not hallucinate features or give medical advice."))
-
 def chat():
     index = load_data()
     # Rest of your chat function
