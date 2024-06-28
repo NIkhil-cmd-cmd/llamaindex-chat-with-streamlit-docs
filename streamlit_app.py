@@ -96,3 +96,22 @@ elif selected == "Resources":
 elif selected == "Advocacy":
     advocacy()
 
+import streamlit as st
+from llama_index.core.readers.file.base import SimpleDirectoryReader
+
+@st.cache
+def load_data():
+    try:
+        reader = SimpleDirectoryReader('/path/to/your/data')
+        docs = reader.load_data()
+    except ImportError as e:
+        st.error(f"ImportError: {e}")
+        raise
+    return docs
+
+def chat():
+    index = load_data()
+    # Rest of your chat function
+
+if __name__ == "__main__":
+    chat()
